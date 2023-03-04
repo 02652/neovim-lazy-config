@@ -1,5 +1,5 @@
 return {
-    'jose-elias-alvarez/null-ls.nvim',
+    "jose-elias-alvarez/null-ls.nvim",
     config = function()
         local null_ls = require("null-ls")
         local formatting = null_ls.builtins.formatting
@@ -12,12 +12,14 @@ return {
             formatting.eslint_d,
             actions.eslint_d,
             diagnostics.eslint_d,
+            diagnostics.alex,
             --diagnostics.djlint,
-            formatting.autopep8
+            formatting.autopep8,
         }
 
         null_ls.setup({
-            sources = sources
+            sources = sources,
+            border = "rounded",
         })
-    end
+    end,
 }
