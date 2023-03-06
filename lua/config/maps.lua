@@ -28,6 +28,14 @@ local hop_actions = function(action, hint)
 		.. "})"
 end
 
+vim.api.nvim_set_keymap("n", "<leader>dc", "", {
+    noremap = true,
+    -- %s/\/\/.\+/
+    callback = function()
+        print("Hello world Katty!")
+    end,
+})
+
 -- Tabla de los atajos de teclado en el estado normal de neovim
 local keys_normals = {
 	quit = { key = leader_mix_keys("q"), action = cmd_run("q") },

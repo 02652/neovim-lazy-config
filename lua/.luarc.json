@@ -20,5 +20,8 @@
         "/home/myo/.local/share/nvim/lazy/cmp-nvim-lua/after",
         "/home/myo/.local/share/nvim/lazy/cmp-nvim-lsp/after",
         "${3rd}/luassert/library"
+    ],
+    "diagnostics.globals": [
+        "vim"
     ]
 }

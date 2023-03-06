@@ -86,7 +86,7 @@ return {
                 { name = "cmp_tabnine" },
                 { name = "luasnip" },
                 { name = "path" },
-                { name = "buffer-lines" },
+                --{ name = "buffer-lines" },
                 { name = "buffer" },
                 { name = 'nerdfont' }
             },
@@ -173,4 +173,5 @@ return {
             }),
         })
     end
+
 }

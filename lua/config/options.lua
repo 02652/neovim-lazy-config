@@ -83,14 +83,14 @@ opt.cursorline = false
 opt.laststatus = 2
 --[[ opt.lazyredraw = true ]]
 opt.list = true
-opt.listchars = {
-  tab = '❘-',
-  trail = '·',
-  lead = '·',
-  extends = '»',
-  precedes = '«',
-  nbsp = '×',
-}
+-- opt.listchars = {
+--   tab = '❘-',
+--   trail = '·',
+--   lead = '·',
+--   extends = '»',
+--   precedes = '«',
+--   nbsp = '×',
+-- }
 opt.number = true
 opt.rnu = true
 opt.showmode = false

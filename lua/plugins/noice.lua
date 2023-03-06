@@ -77,7 +77,7 @@ return {
                     }
                 },
                 message = {
-                    enabled = true,
+                    enabled = false,
                 },
                 documentation = {
                     --view = "hover",
