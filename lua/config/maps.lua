@@ -1,9 +1,11 @@
 -- Funcion para crear atajos de teclado en el estado normal
+require 're'
 local nmap = function(tbl)
 	-- Opciones por defecto de los atajos de teclado
 	local default_opts = { noremap = true, silent = true }
 	vim.keymap.set("n", tbl["key"], tbl["action"], default_opts)
 end
+
 
 local cmd_run = function(action)
 	return "<cmd>" .. action .. "<CR>"
@@ -19,22 +21,6 @@ end
 local telescope_actions = function(action)
 	return "lua require('telescope.builtin')." .. action .. "()"
 end
-
-local hop_actions = function(action, hint)
-	return "lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection."
-		.. action
-		.. ", current_line_only = true, "
-		.. hint
-		.. "})"
-end
-
-vim.api.nvim_set_keymap("n", "<leader>dc", "", {
-    noremap = true,
-    -- %s/\/\/.\+/
-    callback = function()
-        print("Hello world Katty!")
-    end,
-})
 
 -- Tabla de los atajos de teclado en el estado normal de neovim
 local keys_normals = {
@@ -81,6 +67,8 @@ local keys_normals = {
 	--
 	-- Auto-save
 	toggle_auto_save = { key = leader_mix_keys("na"), action = cmd_run("ASToggle") },
+
+    delete_comments_dart = {key = leader_mix_keys("cc"), action = cmd_run([[%s%\/\/.\+\|\/\/%]])}
 }
 
 -- Seteando los atajos de teclado normales
