@@ -13,7 +13,8 @@ return {
             actions.eslint_d,
             diagnostics.eslint_d,
             diagnostics.alex,
-            --diagnostics.djlint,
+            diagnostics.djlint,
+            formatting.djlint,
             formatting.autopep8,
         }
 
