@@ -11,10 +11,6 @@ return {
         "hrsh7th/cmp-git",
         "amarakon/nvim-cmp-buffer-lines",
         "chrisgrieser/cmp-nerdfont",
-        {
-            'tzachar/cmp-tabnine',
-            build = './install.sh'
-        }
     },
     config = function()
         local cmp = require('cmp')
@@ -52,19 +48,19 @@ return {
 
         cmp.setup {
             mapping = {
-                    ["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
-                    ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
-                    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-                    ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                    ["<C-e>"] = cmp.mapping.abort(),
-                    ["<c-x>"] = cmp.mapping(
+                ["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+                ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+                ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+                ["<C-f>"] = cmp.mapping.scroll_docs(4),
+                ["<C-e>"] = cmp.mapping.abort(),
+                ["<c-x>"] = cmp.mapping(
                     cmp.mapping.confirm {
                         behavior = cmp.ConfirmBehavior.Insert,
                         select = true,
                     },
                     { "i", "c" }
                 ),
-                    ["<c-space>"] = cmp.mapping {
+                ["<c-space>"] = cmp.mapping {
                     i = cmp.mapping.complete(),
                     c = function(
                         _ --[[fallback]]
@@ -83,7 +79,7 @@ return {
             sources = {
                 { name = "nvim_lua" },
                 { name = "nvim_lsp" },
-                { name = "cmp_tabnine" },
+                --{ name = "cmp_tabnine" },
                 { name = "luasnip" },
                 { name = "path" },
                 --{ name = "buffer-lines" },
@@ -94,7 +90,6 @@ return {
             sorting = {
                 priority_weight = 2,
                 comparators = {
-                    require('cmp_tabnine.compare'),
                     cmp.config.compare.offset,
                     cmp.config.compare.exact,
                     cmp.config.compare.score,
@@ -120,10 +115,10 @@ return {
                         nvim_lua = "[api]",
                         path = "[path]",
                         luasnip = "[snip]",
-                            ["buffer-lines"] = "[BL]",
+                        ["buffer-lines"] = "[BL]",
                         cmp_tabnine = "[TN]",
-                            ["vim-dadbod-completion"] = "[DB]",
-                            ["nerdfont"] = "[NF]"
+                        ["vim-dadbod-completion"] = "[DB]",
+                        ["nerdfont"] = "[NF]"
                     },
                 },
             },
@@ -173,5 +168,4 @@ return {
             }),
         })
     end
-
 }

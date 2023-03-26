@@ -1,5 +1,4 @@
 -- Funcion para crear atajos de teclado en el estado normal
-require 're'
 local nmap = function(tbl)
 	-- Opciones por defecto de los atajos de teclado
 	local default_opts = { noremap = true, silent = true }
