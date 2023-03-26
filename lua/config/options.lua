@@ -26,7 +26,6 @@ opt.modelines = 1
 
 opt.belloff = "all"
 
-
 opt.inccommand = "split"
 opt.shada = { "!", "'1000", "<50", "s10", "h" }
 
@@ -80,7 +79,8 @@ opt.wildmenu = true
 
 -- ui
 opt.cursorline = false
-opt.laststatus = 2
+opt.laststatus = 3
+opt.showtabline = 0
 --[[ opt.lazyredraw = true ]]
 opt.list = true
 -- opt.listchars = {
